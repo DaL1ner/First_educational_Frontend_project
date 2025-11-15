@@ -2,5 +2,4 @@
 ## Проект
 Этот репозиторий является каркасом для будущего веб-приложения.
 ## Ссылки
-- [Публичная страница на GitHub Pages](https://DaL1ner.github.io/
-project_1/)
+- [Публичная страница на GitHub Pages](https://DaL1ner.github.io/project_1/)

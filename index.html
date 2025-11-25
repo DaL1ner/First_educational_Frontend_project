@@ -1,49 +1,112 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Мой сайт</title>
-    <link rel="icon" href="assets/test_favicon.ico" type="image/x-icon">
+    <link rel="icon" href="assets/icons/test_favicon.ico" type="image/x-icon">
+    <style>
+        .top-bar {
+            display: flex;
+            justify-content: space-between; /* авто-распределение блока */
+            align-items: center; /* центрирование по вертикали */
+            padding-bottom: 10px;
+        }
+        .logo {
+            text-align: center;
+        }
+        .navigate-menu {
+            display: flex;
+            flex-direction: row;
+            justify-content: center; /* центрирование блока */
+            gap: 20px; /* интервал между кнопками */
+            padding-top: 10px;
+        }
+
+        .collection {
+            display: flex;
+            justify-content: center; /* центрирование блока */
+            align-items: stretch;
+            padding-top: 40px; /* Отступ от панели навигации */
+        }
+        .collection-text {
+            display: flex;
+            flex-direction: column;
+            background-color: #2c3e50;
+            color: white;
+            padding: 30px;
+            width: 100%;
+            max-width: 800px;
+        }
+        .collection-image img {
+            height: 100%; /* Растягиваем по высоте родительского блока */
+            width: auto; /* Ширина автоматически подстраивается */
+            object-fit: cover; /* Обрезает/масштабирует, чтобы заполнить */
+        }
+        .collection-text button {
+            /* Сброс стандартных стилей */
+            background-color: #3498db; /* Цвет фона*/
+            color: white; /* Белый текст */
+            border: none; /* Убираем рамку */
+            padding: 14px 36px; /* Отступы: вертикаль 14px, горизонталь 28px */
+            font-size: 16px; /* Размер шрифта */
+            cursor: pointer; /* Курсор-рука при наведении */
+            outline: none; /* Убираем обводку при фокусе */
+            align-self: flex-start;     /* Чтобы кнопка не растягивалась на всю ширину */
+            margin-bottom: auto
+        }
+
+        .collection-text .description-bottom {
+            margin-top: auto;         /* Прижимает параграф к НИЗУ */
+            margin-bottom: 0;         /* Убираем стандартный отступ */
+            font-size: 14px;
+        }
+    </style>
 </head>
+
 <body>
     <header>
-        <div>
-            <h1>МойСайт</h1>
+        <!-- Иконки и логотип -->
+        <div class="top-bar">
+            <div class="left-icons">
+                <img src="assets/icons/Search.png" alt="Поиск" width="24">
+            </div>
+            <div class="logo">
+                <img src="assets/icons/Лого.png" alt="Логотип">
+            </div>
+
+            <div class="right-icons">
+                <img src="assets/icons/User--avatar.png" alt="Аватар" width="24">
+                <img src="assets/icons/Shopping--cart.png" alt="Корзина" width="24">
+            </div>
         </div>
-        <nav>
-            <ul>
-                <li><a href="#home">Главная</a></li>
-                <li><a href="#about">О нас</a></li>
-                <li><a href="#services">Услуги</a></li>
-                <li><a href="#contact">Контакты</a></li>
-            </ul>
+
+        <!-- Меню навигации -->
+        <nav class="navigate-menu">
+            <a href="#contacts">Контакты</a>
+            <a href="#services">Услуги</a>
+            <a href="#assortment">Асортимент</a>
+            <a href="#portfolio">Портфолио</a>
+            <a href="#about">О нас</a>
+            <a href="#blog">Блог</a>
+            <a href="#home">Главная</a>
         </nav>
     </header>
+
     <main>
-        <section id="home">
-            <h2>Добро пожаловать!</h2>
-            <p>Это главная страница нашего веб-приложения.</p>
-        </section>
-        <section id="about">
-            <h2>О нас</h2>
-            <p>Мы компания, которая занимается созданием качественных веб-решений.
-            </p>
-        </section>
-        <section id="services">
-            <h2>Наши услуги</h2>
-            <ul>
-                <li>Веб-разработка</li>
-                <li>Дизайн</li>
-                <li>Консультации</li>
-            </ul>
-        </section>
-            <section id="contact">
-            <h2>Контакты</h2>
-            <p>Email: info@example.com</p>
-            <p>Телефон: +7 (123) 456-78-90</p>
+        <section class="collection">
+            <div class="collection-text">
+                <h2>Заголовок</h2>
+                <button>Кнопка</button>
+                <p class="description-bottom">Текст описания...</p>
+            </div>
+            <div class="collection-image">
+                <img src="assets/img/Right Image.png" alt="Асортимент">
+            </div>
         </section>
     </main>
+
     <footer>
         <p>&copy; 2025 Сайт. Все права защищены.</p>
     </footer>

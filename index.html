@@ -63,7 +63,8 @@
             width: 100%;
             max-width: 1200px;
         }
-        .collection-image img {
+        .collection img {
+            display: block; /* делаем блочным */ 
             height: 100%; /* Растягиваем по высоте родительского блока */
             width: auto; /* Ширина автоматически подстраивается */
             object-fit: cover; /* Обрезает/масштабирует, чтобы заполнить */
@@ -137,12 +138,12 @@
         }
         .new-product h3 {
             padding-left: 10px; /*сдвигаем текст вправо */
-            margin: 10 0;
+            margin: 10px 0;
             font-size: 18px;
         }
         .new-product h4 {
             padding-left: 10px; /*сдвигаем текст вправо */
-            margin: 10 0;
+            margin: 10px 0;
             font-size: 16px;
         }
         .new-product-button {
@@ -184,12 +185,12 @@
         }
         .popular-product h3 {
             padding-left: 10px; /*сдвигаем текст вправо */
-            margin: 10 0;
+            margin: 10px 0;
             font-size: 18px;
         }
         .popular-product h4 {
             padding-left: 10px; /*сдвигаем текст вправо */
-            margin: 10 0;
+            margin: 10px 0;
             font-size: 16px;
         }
         .popular-product-button {
@@ -210,19 +211,17 @@
     <header>
         <!-- Иконки и логотип -->
         <div class="top-bar">
-            <div class="left-icons">
+            <nav class="left-icons">
                 <img src="assets/icons/Search.png" alt="Поиск" width="18">
-            </div>
+            </nav>
             <div class="logo">
-                <img src="assets/icons/Лого.png" alt="Логотип">
+                <img src="assets/icons/Logo.png" alt="Логотип">
             </div>
-
-            <div class="right-icons">
+            <nav class="right-icons">
                 <img src="assets/icons/Shopping--cart.png" alt="Корзина" width="18">
                 <img src="assets/icons/User--avatar.png" alt="Аватар" width="18">
-            </div>
+            </nav>
         </div>
-
         <!-- Меню навигации -->
         <nav class="navigate-menu">
             <a href="#contacts">Контакты</a>
@@ -240,38 +239,36 @@
             <!-- Коллекция -->
             <section class="collection">
                 <div class="collection-text">
-                    <h2>Заголовок</h2>
-                    <button>Кнопка</button>
-                    <p class="description-bottom">Текст описания...</p>
+                    <h1>Мебельный бренд будущего с&nbsp;неподвластным времени дизайном</h1>
+                    <button>Посмотреть коллекцию</button>
+                    <p class="description-bottom">Мы&nbsp;вынуждены отталкиваться от&nbsp;того, что высококачественный прототип будущего проекта говорит о&nbsp;возможностях позиций, занимаемых участниками в&nbsp;отношении поставленных задач. Наше дело не&nbsp;так однозначно, как может показаться: сплочённость команды профессионалов, в&nbsp;своём классическом представлении, допускает внедрение первоочередных требований.</p>
                 </div>
-                <div class="collection-image">
-                    <img src="assets/img/Right Image.png" alt="Асортимент">
-                </div>
+                <img src="assets/img/Right--Image.png" alt="Асортимент">
             </section>
 
             <!-- Отличия компании -->
             <section class="differents-plate">
-                <h2>Наши отличия</h2>
+                <h2>Что отличает наш бренд от других?</h2>
                 <div class="differents-cards">
                     <div class="different">
-                        <img src="assets/icons/Delivery.png" alt="отличие 1" width="24">
-                        <h3>Качество</h3>
-                        <p>Мы используем только проверенные материалы и технологии.</p>
+                        <img src="assets/icons/Delivery.png" alt="Доставка" width="24">
+                        <h3>На следующий день как обычно</h3>
+                        <p>Закажите до&nbsp;15:00 и&nbsp;получите свой заказ на&nbsp;следующий стандартный день</p>
                     </div>
                     <div class="different">
-                        <img src="assets/icons/Checkmark--outline.png" alt="отличие 2" width="24">
-                        <h3>Качество</h3>
-                        <p>Мы используем только проверенные материалы и технологиимсмсмсмсмсмсм.</p>
+                        <img src="assets/icons/Checkmark--outline.png" alt="Качество" width="24">
+                        <h3>Изготовлено настоящими мастерами своего дела</h3>
+                        <p>Изделия ручной работы, изготовленные с&nbsp;настоящей страстью и&nbsp;мастерством</p>
                     </div>
                     <div class="different">
-                        <img src="assets/icons/Purchase.png" alt="отличие 3" width="24">
-                        <h3>Качество</h3>
-                        <p>Мы используем только проверенные материалы и технологии.</p>
+                        <img src="assets/icons/Purchase.png" alt="Цены" width="24">
+                        <h3>Непревзойденные цены</h3>
+                        <p>Благодаря нашим материалам и&nbsp;качеству вы&nbsp;нигде не&nbsp;найдете лучших цен</p>
                     </div>
                     <div class="different">
-                        <img src="assets/icons/Sprout.png" alt="отличие 4" width="24">
-                        <h3>Качество</h3>
-                        <p>Мы используем только проверенные материалы и технологии.</p>
+                        <img src="assets/icons/Sprout.png" alt="Упаковка" width="24">
+                        <h3>Переработанная упаковка</h3>
+                        <p>Мы&nbsp;используем 100% переработанную упаковку, чтобы обеспечить удобство использования</p>
                     </div>
                 </div>
             </section>
@@ -286,17 +283,17 @@
                         <h4>400 р.</h4>
                     </div>
                     <div class="new-product">
-                        <img src="assets/img/Photo (3).png" alt="новый продукт 2">
+                        <img src="assets/img/Photo--3.png" alt="новый продукт 2">
                         <h3>Стул</h3>
                         <h4>400 р.</h4>
                     </div>
                     <div class="new-product">
-                        <img src="assets/img/Photo (1).png" alt="новый продукт 3">
+                        <img src="assets/img/Photo--1.png" alt="новый продукт 3">
                         <h3>Стул</h3>
                         <h4>400 р.</h4>
                     </div>
                     <div class="new-product">
-                        <img src="assets/img/Photo (2).png" alt="новый продукт 4">
+                        <img src="assets/img/Photo--2.png" alt="новый продукт 4">
                         <h3>Стул</h3>
                         <h4>400 р.</h4>
                     </div>
@@ -319,22 +316,88 @@
                         <h4>600 р.</h4>
                     </div>
                     <div class="popular-product">
-                        <img src="assets/img/Photo (3).png" alt="новый продукт 3">
+                        <img src="assets/img/Photo--3.png" alt="новый продукт 3">
                         <h3>Стол</h3>
                         <h4>600 р.</h4>
                     </div>
                 </div>
                 <button class="popular-product-button">Посмотреть все товары</button>
             </section>
+
+            <section>
+                <header>
+                    <h2>Присоединяйтесь к&nbsp;клубу и&nbsp;получайте преимущества</h2>
+                    <h3>Как принято считать, сделанные на&nbsp;базе интернет-аналитики выводы указаны как претенденты на&nbsp;роль ключевых факторов</h3>
+                </header>
+                <form>
+                    <input type="email" placeholder="your@email.ru">
+                    <button>Подписаться</button>
+                </form>
+            </section>
+
+            <section>
+                <div>
+                    <header>
+                        <h2>От&nbsp;студии в&nbsp;Саратове до&nbsp;мирового бренда с&nbsp;более чем 400 торговыми точками</h2>
+                    </header>
+                    <p>
+                        Как уже неоднократно упомянуто, явные признаки победы институционализации освещают чрезвычайно интересные особенности картины в&nbsp;целом, однако конкретные выводы, разумеется, объявлены нарушающими общечеловеческие нормы этики и&nbsp;морали. С&nbsp;учётом сложившейся международной обстановки, новая модель организационной деятельности напрямую зависит от&nbsp;позиций, занимаемых участниками в&nbsp;отношении поставленных задач 
+                        <br><br>Картельные сговоры не&nbsp;допускают ситуации, при которой интерактивные прототипы, инициированные исключительно синтетически, разоблачены. В&nbsp;частности, экономическая повестка сегодняшнего дня выявляет срочную потребность системы обучения кадров, соответствующей насущным потребностям.
+                    </p>
+                    <button>Связаться</button>
+                </div>
+                <img src="assets/img/Image.png" alt="попробовать">
+            </section>
         </div>
     </main>
 
-
-
-
-
     <footer>
-        <p>&copy; 2025 Сайт. Все права защищены.</p>
+        <div>
+            <nav>
+                <h2>Заголовок навигации 1</h2>
+                <ul>
+                    <li><a href="#nav">Навигация 1</a></li>
+                    <li><a href="#nav">Навигация 2</a></li>
+                    <li><a href="#nav">Навигация 3</a></li>
+                    <li><a href="#nav">Навигация 4</a></li>
+                    <li><a href="#nav">Навигация 5</a></li>
+                </ul>
+            </nav>
+            <nav>
+                <h2>Заголовок навигации 2</h2>
+                <ul>
+                    <li><a href="#nav">Навигация 1</a></li>
+                    <li><a href="#nav">Навигация 2</a></li>
+                    <li><a href="#nav">Навигация 3</a></li>
+                    <li><a href="#nav">Навигация 4</a></li>
+                    <li><a href="#nav">Навигация 5</a></li>
+                    <li><a href="#nav">Навигация 6</a></li>
+                </ul>
+            </nav>
+            <nav>
+                <h2>Заголовок навигации 3</h2>
+                <ul>
+                    <li><a href="#nav">Навигация 1</a></li>
+                    <li><a href="#nav">Навигация 2</a></li>
+                    <li><a href="#nav">Навигация 3</a></li>
+                    <li><a href="#nav">Навигация 4</a></li>
+                    <li><a href="#nav">Навигация 5</a></li>
+                </ul>
+            </nav>
+        </div>
+        <section>
+            <h2>Присоединяйся к нам!</h2>
+            <form>
+                <input type="email" placeholder="your@email.ru">
+                <button>Подписаться</button>
+            </form>
+        </section>
+        <div>
+            <p>&copy; 2025 Сайт. Все права защищены.</p>
+            <img src="assets/icons/Logo--skype.png" alt="skype">
+            <img src="assets/icons/Logo--pinterest.png" alt="pinterest">
+            <img src="assets/icons/Logo--linkedin.png" alt="linkedin">
+        </div>
     </footer>
 </body>
 </html>

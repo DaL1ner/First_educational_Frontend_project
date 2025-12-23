@@ -93,9 +93,10 @@ body {
 }
 
 /* Collection */
+
 .collection {
-    display: flex;
-    align-items: stretch;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
     padding-top: 40px;
 }
 
@@ -106,7 +107,20 @@ body {
     color: var(--white);
     padding: 30px;
     width: 100%;
-    max-width: 1200px;
+    grid-column: span 2;
+}
+
+.collection__image {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+/* Адаптивность для мобильных устройств */
+@media (max-width: 768px) {
+    .collection {
+        grid-template-columns: 2fr;
+    }
 }
 
 .collection__title {
@@ -151,12 +165,6 @@ body {
     line-height: 150%;
 }
 
-.collection__image {
-    height: 100%;
-    width: auto;
-    object-fit: cover;
-}
-
 /* Differences */
 .differences {
     text-align: center;
@@ -170,10 +178,16 @@ body {
 }
 
 .differences__cards {
-    display: flex;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 30px;
-    flex-wrap: wrap;
+    justify-content: center;
+}
+
+@media (max-width: 768px) {
+    .differences__cards {
+        grid-template-columns: 1fr;
+    }
 }
 
 .differences__card {
@@ -220,20 +234,31 @@ body {
 }
 
 .products__cards {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 30px;
-    flex-wrap: wrap;
 }
 
 .products__cards--popular {
     display: grid;
-    grid-template-columns: 2fr 1fr 1fr;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 30px;
 }
 
-/* .product--large {
+.product--large {
     grid-column: span 2;
-} */
+}
+
+/* Для мобильных устройств */
+@media (max-width: 768px) {
+  .products__cards--popular {
+    grid-template-columns: 1fr;
+  }
+  
+  .product--large {
+    grid-column: span 1;
+  }
+}
 
 .product {
     flex: 1;
@@ -368,17 +393,16 @@ body {
 }
 
 /* about */
-
 .about {
-    display: flex;
-    align-items: stretch;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
     padding-top: 40px;
 }
 
 .about__text {
-    padding: 30px;
-    width: 100%;
-    max-width: 1200px;
+    display: flex;
+    flex-direction: column;
 }
 
 .about__title {
@@ -407,6 +431,7 @@ body {
     border-radius: 4px;
     cursor: pointer;
     transition: all 0.3s ease;
+    align-self: flex-start;
 }
 
 .about__button:hover {
@@ -424,6 +449,19 @@ body {
     transform: scale(0.98) translateY(1px); /* Меньше масштаб и легкое смещение вниз */
     background-color: #2c2c4a; /* Темнее при нажатии */
 }
+
+/* Для мобильных устройств */
+@media (max-width: 768px) {
+    .about {
+        grid-template-columns: 1fr;
+    }
+    
+    .about__image {
+        width: 100%;
+        height: auto;
+    }
+}
+
 
 /* Footer */
 .footer {
@@ -487,6 +525,6 @@ body {
 }
 
 .footer__social {
-  display: flex;
-  gap: 15px;
+    display: flex;
+    gap: 15px;
 }

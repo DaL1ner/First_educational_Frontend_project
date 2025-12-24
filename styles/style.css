@@ -45,18 +45,23 @@ body {
 }
 
 .header__top-bar {
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr; /* Три колонки: левая, центральная, правая */
     align-items: center;
     padding: 10px 40px;
     border-bottom: 1px solid var(--border-gray);
 }
 
+.header__left-icons {
+    justify-self: start; /* Выравнивание по левому краю первой колонки */
+}
+
 .header__logo {
-    text-align: center;
+    justify-self: center; /* Центрирование во второй колонке */
 }
 
 .header__right-icons {
+    justify-self: end; /* Выравнивание по правому краю третьей колонки */
     display: flex;
     gap: 16px;
 }

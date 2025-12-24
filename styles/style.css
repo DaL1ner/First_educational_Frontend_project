@@ -48,7 +48,7 @@ body {
     display: grid;
     grid-template-columns: 1fr auto 1fr; /* Три колонки: левая, центральная, правая */
     align-items: center;
-    padding: 10px 40px;
+    padding: 10px 20px;
     border-bottom: 1px solid var(--border-gray);
 }
 
@@ -146,95 +146,12 @@ body {
     line-height: 1;
 }
 
-/* Адаптивность для мобильных устройств */
-@media (max-width: 768px) {
-    .header__hamburger {
-        display: flex;
-        margin: 20px auto; /* Центрируем кнопку */
-    }
-    
-    /* Скрытие обычного меню по умолчанию */
-    .header__navigate-menu {
-        display: none;
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: rgba(255, 255, 255, 0.852); /* Полупрозрачный фон */
-        backdrop-filter: blur(5px); /* Эффект размытия для современных браузеров */
-        -webkit-backdrop-filter: blur(5px);
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        gap: 25px;
-        z-index: 999;
-        padding: 20px;
-    }
-    
-    /* Показываем меню, когда оно активно */
-    .header__navigate-menu.active {
-        display: flex;
-    }
-
-    .header__navigate-menu-menu-close.active { /* Кнопка закрытия меню активна*/
-        display: flex;
-    }
-
-    /* Стили для ссылок в мобильном меню */
-    .header__navigate-menu-link {
-        font-size: 24px;
-        padding: 15px 0;
-        border: none;
-        width: 100%;
-        text-align: center;
-        color: var(--dark-primary);
-        text-decoration: none;
-        transition: all 0.3s ease;
-        position: relative;
-    }
-    
-    .header__navigate-menu-link::after {
-        content: '';
-        position: absolute;
-        bottom: 0;
-        left: 50%;
-        width: 0;
-        height: 2px;
-        background-color: var(--primary);
-        transition: all 0.3s ease;
-        transform: translateX(-50%);
-    }
-    
-    .header__navigate-menu-link:hover {
-        color: var(--primary);
-    }
-    
-    .header__navigate-menu-link:hover::after {
-        width: 80%;
-    }
-    
-    /* Анимация для гамбургера при открытии меню */
-    .hamburger.active span:nth-child(1) {
-        transform: translateY(8px) rotate(45deg);
-        background-color: var(--primary);
-    }
-    
-    .hamburger.active span:nth-child(2) {
-        opacity: 0;
-    }
-    
-    .hamburger.active span:nth-child(3) {
-        transform: translateY(-8px) rotate(-45deg);
-        background-color: var(--primary);
-    }
-}
-
 /* Collection */
 .collection {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    padding-top: 40px;
+    margin-top: 20px;
+    align-items: stretch;
 }
 
 .collection__text {
@@ -244,21 +161,14 @@ body {
     color: var(--white);
     padding: 30px;
     width: 100%;
+    height: 100%;
     grid-column: span 2;
 }
 
 .collection__image {
     width: 100%;
-    height: auto;
+    height: 100%;
     object-fit: cover;
-}
-
-/* Адаптивность для мобильных устройств */
-@media (max-width: 768px) {
-    .collection {
-        grid-template-columns: 2fr;
-        padding-top: 0px;
-    }
 }
 
 .collection__title {
@@ -276,7 +186,7 @@ body {
     cursor: pointer;
     border-radius: 4px;
     transition: all 0.3s ease;
-    margin-top: 15px;
+    margin: 15px 0;
     align-self: flex-start;
 }
 
@@ -321,12 +231,6 @@ body {
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 30px;
     justify-content: center;
-}
-
-@media (max-width: 768px) {
-    .differences__cards {
-        grid-template-columns: 1fr;
-    }
 }
 
 .differences__card {
@@ -386,17 +290,6 @@ body {
 
 .product--large {
     grid-column: span 2;
-}
-
-/* Для мобильных устройств */
-@media (max-width: 768px) {
-  .products__cards--popular {
-    grid-template-columns: 1fr;
-  }
-  
-  .product--large {
-    grid-column: span 1;
-  }
 }
 
 .product {
@@ -537,11 +430,13 @@ body {
     grid-template-columns: 1fr 1fr;
     gap: 30px;
     padding-top: 40px;
+    align-items: stretch;
 }
 
 .about__text {
     display: flex;
     flex-direction: column;
+    height: 100%;
 }
 
 .about__title {
@@ -551,14 +446,14 @@ body {
 }
 
 .about__description {
-    margin-top: auto;
+    margin-bottom: auto;
     font-size: 14px;
     line-height: 150%;
 }
 
 .about__image {
     height: 100%;
-    width: auto;
+    width: 100%;
     object-fit: cover;
 }
 
@@ -571,6 +466,7 @@ body {
     cursor: pointer;
     transition: all 0.3s ease;
     align-self: flex-start;
+    margin: 20px 0;
 }
 
 .about__button:hover {
@@ -588,19 +484,6 @@ body {
     transform: scale(0.98) translateY(1px); /* Меньше масштаб и легкое смещение вниз */
     background-color: #2c2c4a; /* Темнее при нажатии */
 }
-
-/* Для мобильных устройств */
-@media (max-width: 768px) {
-    .about {
-        grid-template-columns: 1fr;
-    }
-    
-    .about__image {
-        width: 100%;
-        height: auto;
-    }
-}
-
 
 /* Footer */
 .footer {

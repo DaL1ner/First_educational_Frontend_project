@@ -16,6 +16,9 @@ function toggleMenu() {
     } else {
         document.removeEventListener('click', closeMenuOnClickOutside);
     }
+
+    // Блокируем скролл при открытом меню
+    document.body.style.overflow = navMenu.classList.contains('active') ? 'hidden' : '';
 }
 
 // Функция для закрытия меню при клике вне него
@@ -30,6 +33,7 @@ function closeMenu() {
     hamburger.classList.remove('active');
     navMenu.classList.remove('active');
     menuClose.classList.remove('active');
+    document.body.style.overflow = '';
     document.removeEventListener('click', closeMenuOnClickOutside);
 }
 
@@ -50,6 +54,13 @@ navLinks.forEach(link => {
     link.addEventListener('click', function() {
         closeMenu();
     });
+});
+
+// Закрытие меню при нажатии Escape
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && navMenu.classList.contains('active')) {
+        closeMenu();
+    }
 });
 
 // Закрытие меню при изменении размера окна (если становится достаточно широким)

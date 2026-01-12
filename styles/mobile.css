@@ -29,7 +29,8 @@
     .header {
         position: sticky;
         top: 0;
-        padding-bottom: 5px;
+        padding-bottom: 1px;
+        z-index: 1001;
     }
 
     .header__hamburger {
@@ -147,6 +148,20 @@
         width: 100%;
         height: auto;
     }
+    
+    .scroll__button {
+        font-size: 22px;
+    }
+
+    .scroll__button:hover {
+        background: var(--primary);
+        transform: none;
+    }
+
+    .scroll__button:active {
+        transform: none;
+    }
+
 }
 
 /* Мобильные (меньше 576px) */

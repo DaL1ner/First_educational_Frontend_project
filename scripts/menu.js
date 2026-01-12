@@ -69,3 +69,56 @@ window.addEventListener('resize', function() {
         closeMenu();
     }
 });
+
+
+
+// Кнопка "Наверх"
+const scrollTopButton = document.getElementById('scrollTop');
+
+// Показываем кнопку и обновляем прогресс после скролла
+window.addEventListener('scroll', () => {
+    if (window.scrollY > 200) {
+        scrollTopButton.classList.add('visible');
+    } else {
+        scrollTopButton.classList.remove('visible');
+    }
+});
+
+
+// Прокрутка к началу страницы
+scrollTopButton.addEventListener('click', () => {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+});
+
+
+// Функция для снятия фокуса с элементов на мобильных устройствах
+function removeFocusOnScroll() {
+    // Проверяем, является ли устройство сенсорным
+    const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+    
+    if (isTouchDevice) {
+        let touchStartY = 0;
+        
+        // Начало касания
+        document.addEventListener('touchstart', (e) => {
+        touchStartY = e.touches[0].clientY;
+        });
+        
+        // Движение пальцем (скролл)
+        document.addEventListener('touchmove', (e) => {
+        const touchCurrentY = e.touches[0].clientY;
+        const scrollDirection = touchCurrentY < touchStartY ? 'down' : 'up';
+        
+        // Если пользователь начал скроллить, снимаем фокус с активного элемента
+        if (Math.abs(touchCurrentY - touchStartY) > 10) { // Минимальное движение для определения скролла
+            document.activeElement.blur();
+        }
+        });
+    }
+}
+
+// Вызов функции при загрузке
+removeFocusOnScroll();

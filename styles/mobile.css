@@ -1,0 +1,195 @@
+/* Ноутбуки (меньше 1200px) */
+@media (max-width: 1199px) {
+    .container {
+        max-width: 1100px;
+    }
+    
+    .products__cards--popular {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+}
+
+/* Планшеты (меньше 992px) */
+@media (max-width: 991px) {
+    .container {
+        max-width: 900px;
+    }
+    
+    .differences__cards {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+}
+
+/* Мобильные в альбомной ориентации (меньше 768px) */
+@media (max-width: 768px) {
+    .container {
+        max-width: 700px;
+    }
+
+    .header {
+        position: sticky;
+        top: 0;
+        padding-bottom: 1px;
+        z-index: 1001;
+    }
+
+    .header__hamburger {
+        display: flex;
+        margin: 12px auto; /* Центрируем кнопку */
+    }
+    
+    /* Скрытие обычного меню по умолчанию */
+    .header__navigate-menu {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(255, 255, 255, 0.852); /* Полупрозрачный фон */
+        backdrop-filter: blur(5px); /* Эффект размытия для современных браузеров */
+        -webkit-backdrop-filter: blur(5px);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 25px;
+        z-index: 999;
+        padding: 20px;
+    }
+    
+    /* Показываем меню, когда оно активно */
+    .header__navigate-menu.active {
+        display: flex;
+    }
+
+    .header__navigate-menu-menu-close.active { /* Кнопка закрытия меню активна*/
+        display: flex;
+    }
+
+    /* Стили для ссылок в мобильном меню */
+    .header__navigate-menu-link {
+        font-size: 24px;
+        padding: 15px 0;
+        border: none;
+        width: 100%;
+        text-align: center;
+        color: var(--dark-primary);
+        text-decoration: none;
+        transition: all 0.3s ease;
+        position: relative;
+    }
+    
+    .header__navigate-menu-link::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        width: 0;
+        height: 2px;
+        background-color: var(--primary);
+        transition: all 0.3s ease;
+        transform: translateX(-50%);
+    }
+    
+    .header__navigate-menu-link:hover {
+        color: var(--primary);
+    }
+    
+    .header__navigate-menu-link:hover::after {
+        width: 80%;
+    }
+    
+    /* Анимация для гамбургера при открытии меню */
+    .header__hamburger.active span:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+        background-color: var(--primary);
+    }
+    
+    .header__hamburger.active span:nth-child(2) {
+        opacity: 0;
+    }
+    
+    .header__hamburger.active span:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+        background-color: var(--primary);
+    }
+
+
+    .collection {
+        grid-template-columns: 2fr;
+        margin-top: 0;
+    }
+
+
+    .differences__cards {
+        grid-template-columns: 1fr;
+    }
+
+
+    .products {
+        margin-top: 0;
+    }
+
+    .products__cards--popular {
+        grid-template-columns: 1fr;
+    }
+    
+    .product--large {
+        grid-column: span 1;
+    }
+
+
+    .about {
+        grid-template-columns: 1fr;
+        padding-top: 0px;
+    }
+    
+    .about__image {
+        width: 100%;
+        height: auto;
+    }
+    
+    .scroll__button {
+        font-size: 22px;
+    }
+
+    .scroll__button:hover {
+        background: var(--primary);
+        transform: none;
+    }
+
+    .scroll__button:active {
+        transform: none;
+    }
+
+}
+
+/* Мобильные (меньше 576px) */
+@media (max-width: 575px) {
+    .container {
+        max-width: 500px;
+    }
+    
+    .header__navigate-menu {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .header__navigate-menu-link {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+/* Очень маленькие экраны (меньше 400px) */
+@media (max-width: 399px) {
+    .container {
+        max-width: 350px;
+    }
+    
+    .products__cards, 
+    .products__cards--popular,
+    .differences__cards {
+        grid-template-columns: 1fr;
+    }
+}

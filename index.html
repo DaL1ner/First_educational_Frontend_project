@@ -1,51 +1,220 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Мой сайт</title>
-    <link rel="icon" href="assets/test_favicon.ico" type="image/x-icon">
+    <link rel="icon" href="assets/icons/test_favicon.ico" type="image/x-icon">
+    <!-- Основные стили -->
+    <link rel="stylesheet" href="styles/style.css">
+    <!-- Мобильные стили -->
+    <link rel="stylesheet" href="styles/mobile.css" media="screen and (max-width:1024px)">
 </head>
+
 <body>
-    <header>
-        <div>
-            <h1>МойСайт</h1>
+    <header class="header">
+        <div class="header__top-bar">
+            <nav class="header__left-icons">
+                <img src="assets/icons/Search.png" alt="Поиск" width="18">
+            </nav>
+            <div class="header__logo">
+                <img src="assets/icons/Logo.png" alt="Логотип">
+            </div>
+            <nav class="header__right-icons">
+                <img src="assets/icons/Shopping--cart.png" alt="Корзина" width="18">
+                <img src="assets/icons/User--avatar.png" alt="Аватар" width="18">
+            </nav>
         </div>
-        <nav>
-            <ul>
-                <li><a href="#home">Главная</a></li>
-                <li><a href="#about">О нас</a></li>
-                <li><a href="#services">Услуги</a></li>
-                <li><a href="#contact">Контакты</a></li>
-            </ul>
+
+        <!-- Гамбургер-меню для мобильных устройств -->
+        <button class="header__hamburger" aria-label="Открыть меню">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <nav class="header__navigate-menu">
+            <button class="header__navigate-menu-menu-close" aria-label="Закрыть меню">
+                <span>&times;</span>
+            </button>
+
+            <a class="header__navigate-menu-link" href="#collection">Коллекция</a>
+            <a class="header__navigate-menu-link" href="#differences">Отличия</a>
+            <a class="header__navigate-menu-link" href="#new-products">Новое</a>
+            <a class="header__navigate-menu-link" href="#popular-products">Популярное</a>
+            <a class="header__navigate-menu-link" href="#newsletter">Присоединиться</a>
+            <a class="header__navigate-menu-link" href="#about-company">Связь</a>
         </nav>
     </header>
+
     <main>
-        <section id="home">
-            <h2>Добро пожаловать!</h2>
-            <p>Это главная страница нашего веб-приложения.</p>
+        <div class="container">
+        <!-- Коллекция -->
+        <section class="collection" id="collection">
+            <div class="collection__text">
+                <h1 class="collection__title">Мебельный бренд будущего с&nbsp;неподвластным времени дизайном</h1>
+                <button class="collection__button">Посмотреть коллекцию</button>
+                <p class="collection__description">Мы&nbsp;вынуждены отталкиваться от&nbsp;того, что высококачественный прототип будущего проекта говорит о&nbsp;возможностях позиций, занимаемых участниками в&nbsp;отношении поставленных задач. Наше дело не&nbsp;так однозначно, как может показаться: сплочённость команды профессионалов, в&nbsp;своём классическом представлении, допускает внедрение первоочередных требований.</p>
+            </div>
+            <img class="collection__image" src="assets/img/Right--Image.png" alt="Асортимент">
         </section>
-        <section id="about">
-            <h2>О нас</h2>
-            <p>Мы компания, которая занимается созданием качественных веб-решений.
-            </p>
+
+        <!-- Отличия компании -->
+        <section class="differences" id="differences">
+            <h2 class="differences__title">Что отличает наш бренд от других?</h2>
+            <div class="differences__cards">
+                <div class="differences__card">
+                    <img class="differences__card-icon" src="assets/icons/Delivery.png" alt="Доставка" width="24">
+                    <h3 class="differences__card-title">На следующий день как обычно</h3>
+                    <p class="differences__card-description">Закажите до&nbsp;15:00 и&nbsp;получите свой заказ на&nbsp;следующий стандартный день</p>
+                </div>
+                <div class="differences__card">
+                    <img class="differences__card-icon" src="assets/icons/Checkmark--outline.png" alt="Качество" width="24">
+                    <h3 class="differences__card-title">Изготовлено настоящими мастерами своего дела</h3>
+                    <p class="differences__card-description">Изделия ручной работы, изготовленные с&nbsp;настоящей страстью и&nbsp;мастерством</p>
+                </div>
+                <div class="differences__card">
+                    <img class="differences__card-icon" src="assets/icons/Purchase.png" alt="Цены" width="24">
+                    <h3 class="differences__card-title">Непревзойденные цены</h3>
+                    <p class="differences__card-description">Благодаря нашим материалам и&nbsp;качеству вы&nbsp;нигде не&nbsp;найдете лучших цен</p>
+                </div>
+                <div class="differences__card">
+                    <img class="differences__card-icon" src="assets/icons/Sprout.png" alt="Упаковка" width="24">
+                    <h3 class="differences__card-title">Переработанная упаковка</h3>
+                    <p class="differences__card-description">Мы&nbsp;используем 100% переработанную упаковку, чтобы обеспечить удобство использования</p>
+                </div>
+            </div>
         </section>
-        <section id="services">
-            <h2>Наши услуги</h2>
-            <ul>
-                <li>Веб-разработка</li>
-                <li>Дизайн</li>
-                <li>Консультации</li>
-            </ul>
+
+        <!-- Новые продукты -->
+        <section class="products" id="new-products">
+            <h2 class="products__title">Новые продукты</h2>
+            <div class="products__cards">
+                <div class="product">
+                    <img class="product__image" src="assets/img/Photo.png" alt="новый продукт 1">
+                    <h3 class="product__title">Новый товар 1</h3>
+                    <h4 class="product__price">400 р.</h4>
+                </div>
+                <div class="product">
+                    <img class="product__image" src="assets/img/Photo--3.png" alt="новый продукт 2">
+                    <h3 class="product__title">Новый товар 2</h3>
+                    <h4 class="product__price">400 р.</h4>
+                </div>
+                <div class="product">
+                    <img class="product__image" src="assets/img/Photo--1.png" alt="новый продукт 3">
+                    <h3 class="product__title">Новый товар 3</h3>
+                    <h4 class="product__price">400 р.</h4>
+                </div>
+                <div class="product">
+                    <img class="product__image" src="assets/img/Photo--2.png" alt="новый продукт 4">
+                    <h3 class="product__title">Новый товар 4</h3>
+                    <h4 class="product__price">400 р.</h4>
+                </div>
+            </div>
+            <button class="products__button">Посмотреть все товары</button>
         </section>
-            <section id="contact">
-            <h2>Контакты</h2>
-            <p>Email: info@example.com</p>
-            <p>Телефон: +7 (123) 456-78-90</p>
+
+        <!-- Популярные продукты -->
+        <section class="products" id="popular-products">
+            <h2 class="products__title">Наши популярные продукты</h2>
+            <div class="products__cards--popular">
+                <div class="product product--large">
+                    <img class="product__image" src="assets/img/Large.png" alt="новый продукт 1">
+                    <h3 class="product__title">Широкий популярный товар</h3>
+                    <h4 class="product__price">600 р.</h4>
+                </div>
+                <div class="product">
+                    <img class="product__image" src="assets/img/Photo.png" alt="новый продукт 2">
+                    <h3 class="product__title">Популярный товар 2</h3>
+                    <h4 class="product__price">600 р.</h4>
+                </div>
+                <div class="product">
+                    <img class="product__image" src="assets/img/Photo--3.png" alt="новый продукт 3">
+                    <h3 class="product__title">Популярный товар 3</h3>
+                    <h4 class="product__price">600 р.</h4>
+                </div>
+            </div>
+            <button class="products__button">Посмотреть все товары</button>
         </section>
+
+        <!-- Подписка -->
+        <section class="newsletter" id="newsletter">
+            <h2 class="newsletter__title">Присоединяйтесь к&nbsp;клубу и&nbsp;получайте преимущества</h2>
+            <p class="newsletter__description">Как принято считать, сделанные на&nbsp;базе интернет-аналитики выводы указаны как претенденты на&nbsp;роль ключевых факторов</p>
+            <form class="newsletter__form">
+                <input type="email" class="newsletter__input" placeholder="your@email.ru">
+                <button class="newsletter__button">Подписаться</button>
+            </form>
+        </section>
+
+        <!-- О компании -->
+        <section class="about" id="about-company">
+            <div class="about__text">
+                <h2 class="about__title">От&nbsp;студии в&nbsp;Барнауле до&nbsp;мирового бренда с&nbsp;более чем 400 торговыми точками</h2>
+                <p class="about__description">
+                    Как уже неоднократно упомянуто, явные признаки победы институционализации освещают чрезвычайно интересные особенности картины в&nbsp;целом, однако конкретные выводы, разумеется, объявлены нарушающими общечеловеческие нормы этики и&nbsp;морали. С&nbsp;учётом сложившейся международной обстановки, новая модель организационной деятельности напрямую зависит от&nbsp;позиций, занимаемых участниками в&nbsp;отношении поставленных задач 
+                    <br><br>Картельные сговоры не&nbsp;допускают ситуации, при которой интерактивные прототипы, инициированные исключительно синтетически, разоблачены. В&nbsp;частности, экономическая повестка сегодняшнего дня выявляет срочную потребность системы обучения кадров, соответствующей насущным потребностям.
+                </p>
+                <button class="about__button">Связаться</button>
+            </div>
+            <img class="about__image" src="assets/img/Image.png" alt="попробовать">
+        </section>
+        </div>
     </main>
-    <footer>
-        <p>&copy; 2025 Сайт. Все права защищены.</p>
+
+    <footer class="footer">
+        <div class="footer__content">
+            <div class="footer__nav">
+                <h3 class="footer__nav-title">Заголовок навигации 1</h3>
+                <a class="footer__nav-link" href="#nav">Навигация 1</a>
+                <a class="footer__nav-link" href="#nav">Навигация 2</a>
+                <a class="footer__nav-link" href="#nav">Навигация 3</a>
+                <a class="footer__nav-link" href="#nav">Навигация 4</a>
+                <a class="footer__nav-link" href="#nav">Навигация 5</a>
+            </div>
+            <div class="footer__nav">
+                <h3 class="footer__nav-title">Заголовок навигации 2</h3>
+                <a class="footer__nav-link" href="#nav">Навигация 1</a>
+                <a class="footer__nav-link" href="#nav">Навигация 2</a>
+                <a class="footer__nav-link" href="#nav">Навигация 3</a>
+                <a class="footer__nav-link" href="#nav">Навигация 4</a>
+                <a class="footer__nav-link" href="#nav">Навигация 5</a>
+                <a class="footer__nav-link" href="#nav">Навигация 6</a>
+            </div>
+            <div class="footer__nav">
+                <h3 class="footer__nav-title">Заголовок навигации 3</h3>
+                <a class="footer__nav-link" href="#nav">Навигация 1</a>
+                <a class="footer__nav-link" href="#nav">Навигация 2</a>
+                <a class="footer__nav-link" href="#nav">Навигация 3</a>
+                <a class="footer__nav-link" href="#nav">Навигация 4</a>
+                <a class="footer__nav-link" href="#nav">Навигация 5</a>
+            </div>
+            <div class="footer__newsletter">
+                <h3 class="footer__nav-title">Присоединяйся к нам!</h3>
+                <form class="newsletter__form">
+                    <input type="email" class="newsletter__input" placeholder="your@email.ru">
+                    <button class="newsletter__button">Подписаться</button>
+                </form>
+            </div>
+        </div>
+        <div class="footer__copyright">
+            <p>&copy; 2025 Сайт. Все права защищены.</p>
+            <div class="footer__social">
+                <img src="assets/icons/Logo--skype.png" alt="skype">
+                <img src="assets/icons/Logo--pinterest.png" alt="pinterest">
+                <img src="assets/icons/Logo--linkedin.png" alt="linkedin">
+            </div>
+        </div>
     </footer>
+
+    <!-- Кнопка "Наверх" -->
+    <div class="scroll__top-wrapper" id="scrollTop">
+        <button class="scroll__button" aria-label="Наверх">
+            ↑
+        </button>
+    </div>
+
+    <script src="scripts/menu.js"></script>
 </body>
 </html>
